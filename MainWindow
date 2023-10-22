@@ -1,0 +1,26 @@
+from turtle import Screen, Turtle
+from Snake_s import Snake
+import time
+
+screen = Screen()
+screen.screensize(600, 600)
+screen.bgcolor('black')
+screen.title("Ankush's Snake Game")
+screen.tracer(0)
+
+snake = Snake()
+
+screen.listen()
+screen.onkey(snake.up, 'Up')
+screen.onkey(snake.down, 'Down')
+screen.onkey(snake.right, 'Right')
+screen.onkey(snake.left, 'Left')
+
+game_is_start = True
+
+while game_is_start:
+    screen.update()  # TO LEARN ABOUT THIS
+    time.sleep(0.1)
+    snake.move()
+
+screen.exitonclick()
